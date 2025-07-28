@@ -1,1 +1,87 @@
-# services.yaml - à compléter
+# Services for Eufy S1 Pro Robot Vacuum
+
+clean_spot:
+  name: Clean Spot
+  description: Start spot cleaning
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+
+clean_edge:
+  name: Clean Edge
+  description: Start edge cleaning
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+
+clean_room:
+  name: Clean Single Room
+  description: Clean a single room
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+
+mop_floor:
+  name: Mop Floor
+  description: Start mopping mode
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+
+set_water_level:
+  name: Set Water Level
+  description: Set the water level for mopping
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+  fields:
+    level:
+      name: Water Level
+      description: Water level (1=Low, 2=Medium, 3=High)
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 3
+          step: 1
+
+set_do_not_disturb:
+  name: Set Do Not Disturb
+  description: Enable or disable do not disturb mode
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+  fields:
+    enabled:
+      name: Enabled
+      description: Enable do not disturb mode
+      required: true
+      selector:
+        boolean:
+
+raw_command:
+  name: Send Raw Command
+  description: Send a raw command to the vacuum (advanced users only)
+  target:
+    entity:
+      domain: vacuum
+      integration: eufy_s1_pro
+  fields:
+    command:
+      name: Command
+      description: The command data point (DP) to send
+      required: true
+      selector:
+        text:
+    value:
+      name: Value
+      description: The value to send with the command
+      required: false
+      selector:
+        text:

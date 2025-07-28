@@ -1,13 +1,11 @@
 {
   "domain": "eufy_s1_pro",
-  "name": "Eufy RoboVac S1 Pro",
+  "name": "Eufy S1 Pro Robot Vacuum",
+  "documentation": "https://github.com/yourrepo/eufy-s1-pro-homeassistant",
+  "dependencies": [],
+  "codeowners": ["@eufy-s1-pro-integration"],
+  "requirements": ["cryptography>=3.0.0"],
   "config_flow": true,
-  "documentation": "https://github.com/yesweekend2024/eufy-s1-pro-homeassistant",
-  "issue_tracker": "https://github.com/yesweekend2024/eufy-s1-pro-homeassistant/issues",
-  "requirements": ["tinytuya>=1.12.0", "cryptography>=3.4.8"],
-  "zeroconf": [{"type": "_eufy-vacuum._tcp.local.", "name": "eufy*"}],
-  "homekit": {},
-  "codeowners": ["@yesweekend2024"],
-  "version": "1.2.0",
-  "loggers": ["custom_components.eufy_s1_pro"]
+  "version": "1.0.0",
+  "iot_class": "local_polling"
 }
